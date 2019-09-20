@@ -102,7 +102,6 @@ class TestClass:
            print('Cool')
         self.driver.find_element_by_id(locatorButtonScoreFilter).click()
         time.sleep(1)
-
         self.driver.find_element_by_id(locatorButtonClearFilter).click()
         time.sleep(1)
         self.driver.find_element_by_id(locatorButtonScoreFilter).click()

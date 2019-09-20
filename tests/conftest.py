@@ -1,13 +1,10 @@
 import pytest
 
-from selenium import webdriver
 
 dc={
    "deviceName": "KYV7N15B14001804",
    "platformName": "Android",
    "app": "C:\\Users\\Vladimir\\Desktop\\app-debug.apk"}
-
-
 
 
 @pytest.fixture(scope="session")

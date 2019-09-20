@@ -4,7 +4,9 @@ from random import randint
 import time, os
 from appium.webdriver.common.touch_action import TouchAction
 from random import randrange
-from locator.Locators import *
+from locator.Locators import locatorButtonScoreFilter,locatorTogglePriceAscending,locatorFieldStartRange,\
+    locatorFieldEndRange,locatorButtonApplyFilter,locatorElementNum5NameInList,locatorElementNum5ScoreInList,\
+    locatorButtonClearFilter
 
 
 
@@ -18,12 +20,10 @@ class TestClass:
         self.session_meth()
 
     def session_meth(self):
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
+        self.driver.find_element_by_id(locatorButtonScoreFilter).click()
         time.sleep(2)
-        self.driver.find_element_by_xpath(
-            '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[3]').click()
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
-
+        self.driver.find_element_by_xpath(locatorTogglePriceAscending).click()
+        self.driver.find_element_by_id(locatorButtonScoreFilter).click()
         for _ in range(5):
            cleanLsScore = []
            lsScore = []
@@ -34,21 +34,21 @@ class TestClass:
            print(startScore, ' | ', endScore)
            time.sleep(1)
            time.sleep(1)
-           self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
+           self.driver.find_element_by_id(locatorButtonScoreFilter).click()
            time.sleep(1)
-           self.driver.find_element_by_id('net.slickdeals.android.test:id/start_range').click()
+           self.driver.find_element_by_id(locatorFieldStartRange).click()
            time.sleep(1)
-           self.driver.find_element_by_id('net.slickdeals.android.test:id/start_range').clear()
+           self.driver.find_element_by_id(locatorFieldStartRange).clear()
            time.sleep(1)
-           self.driver.find_element_by_id('net.slickdeals.android.test:id/start_range').send_keys(str(startScore))
+           self.driver.find_element_by_id(locatorFieldStartRange).send_keys(str(startScore))
            time.sleep(2)
-           self.driver.find_element_by_id('net.slickdeals.android.test:id/end_range').click()
+           self.driver.find_element_by_id(locatorFieldEndRange).click()
            time.sleep(1)
-           self.driver.find_element_by_id('net.slickdeals.android.test:id/end_range').clear()
+           self.driver.find_element_by_id(locatorFieldEndRange).clear()
            time.sleep(1)
-           self.driver.find_element_by_id('net.slickdeals.android.test:id/end_range').send_keys(str(endScore))
+           self.driver.find_element_by_id(locatorFieldEndRange).send_keys(str(endScore))
            time.sleep(1)
-           self.driver.find_element_by_id('net.slickdeals.android.test:id/apply_filter').click()
+           self.driver.find_element_by_id(locatorButtonApplyFilter).click()
            time.sleep(1)
            for i in range(1, 6):
                try:
@@ -69,10 +69,9 @@ class TestClass:
            while True:
                try:
                    time.sleep(1)
-                   elementName = (self.driver.find_element_by_xpath(
-                       '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView').text)
+                   elementName = (self.driver.find_element_by_xpath(locatorElementNum5NameInList).text)
                    elemScore = (self.driver.find_element_by_xpath(
-                       '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[1]').text)
+                       locatorElementNum5ScoreInList).text)
                    actions = TouchAction(self.driver)
                    actions.press(x=381, y=520)
                    actions.move_to(x=536, y=491)
@@ -101,17 +100,18 @@ class TestClass:
                assert cleanLsScore[i] <= endScore
                assert cleanLsScore[i] == lsSorted[i]
            print('Cool')
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
+        self.driver.find_element_by_id(locatorButtonScoreFilter).click()
         time.sleep(1)
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/clear_filter').click()
+
+        self.driver.find_element_by_id(locatorButtonClearFilter).click()
         time.sleep(1)
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/apply_filter').click()
+        self.driver.find_element_by_id(locatorButtonScoreFilter).click()
+        self.driver.find_element_by_id(locatorButtonApplyFilter).click()
         time.sleep(1)
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
-        self.driver.find_element_by_id('net.slickdeals.android.test:id/score_filter').click()
+        self.driver.find_element_by_id(locatorButtonScoreFilter).click()
+        self.driver.find_element_by_id(locatorButtonScoreFilter).click()
+        self.driver.find_element_by_id(locatorButtonScoreFilter).click()
+        self.driver.find_element_by_id(locatorButtonScoreFilter).click()
 
 
 

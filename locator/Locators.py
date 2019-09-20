@@ -1,0 +1,8 @@
+locatorButtonScoreFilter = 'net.slickdeals.android.test:id/score_filter'
+locatorTogglePriceAscending = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[3]'
+locatorFieldStartRange = 'net.slickdeals.android.test:id/start_range'
+locatorFieldEndRange = 'net.slickdeals.android.test:id/end_range'
+locatorButtonApplyFilter = 'net.slickdeals.android.test:id/apply_filter'
+locatorElementNum5NameInList = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView'
+locatorElementNum5ScoreInList = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[1]'
+locatorButtonClearFilter = 'net.slickdeals.android.test:id/clear_filter'

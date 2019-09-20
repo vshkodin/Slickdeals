@@ -3,3 +3,6 @@ pytest
 selenium
 allure-pytest
 Appium-Python-Client
+pytest-xdist
+pip install --editable
+pip install pytest-parallel

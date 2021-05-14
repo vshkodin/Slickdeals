@@ -5,4 +5,3 @@ allure-pytest
 Appium-Python-Client
 pytest-xdist
 pytest-parallel
-shutil

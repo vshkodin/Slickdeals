@@ -2,6 +2,7 @@
 ### In order to run for 2 or more devices MAC OS required.
 ### Frameworks: Python/Pytest/Docker/Appium/apllure
 
+
 1. Download Python 3.7.4 https://www.python.org/downloads/ 
 
 2. Install Brew. Paste that in a macOS Terminal prompt. 
